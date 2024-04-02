@@ -142,7 +142,7 @@ String.prototype.divide = function (divisor) {
     while (step <= dividend.length) {
         let count = 0;
         // Perform subtraction until tempDividend is not greater than or equal to divisor
-        while ((checkForBigger(tempDividend, divisor) || tempDividend === divisor)) {
+        while ((checkForBigger(tempDividend, divisor) || tempDividend.replace(LEADING_ZEROS, '') === divisor)) {
             tempDividend = tempDividend.minus(divisor);
             count++;
         }
@@ -202,3 +202,6 @@ String.prototype.multiply = function (stringNum) {
 }
 
 module.exports = {String};
+
+
+
